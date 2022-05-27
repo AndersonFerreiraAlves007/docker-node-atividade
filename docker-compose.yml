@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  mongoDB:
+    image: mongo:5.0
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - C:\mongo_db:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=anderson
+      - MONGO_INITDB_ROOT_PASSWORD=58310502
+  mginx:
+    image: nginx:latest
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - C:\Users\ander\Documents\AlphaEdtech\docker-node-atividade\site:/usr/share/nginx/html
